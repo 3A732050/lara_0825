@@ -65,9 +65,13 @@ Route::get('/', function () {
     /*
     $allPosts = Post::all();
     dd($allPosts);
-    */
+
     $savedPosts = Post::where('title', 'saved title')->get();
     dd($savedPosts);
+    */
+
+    $fourthPost = Post::find(4);
+    dd($fourthPost);
 });
 
 Route::get('index', [PostsController::class, 'index'])->name('posts.index');
