@@ -56,8 +56,10 @@ Route::get('/', function () {
     /*
     $post = Post::find(2);
     $post->delete();
-    */
+
     Post::destroy(7);
+    */
+    Post::destroy(3, 5, 9);
 });
 
 Route::get('index', [PostsController::class, 'index'])->name('posts.index');
