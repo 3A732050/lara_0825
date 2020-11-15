@@ -29,7 +29,11 @@ Route::get('/', function () {
     ]);
     */
 
+    /*
     $post = Post::all();
+    dd($post);
+    */
+    $post = Post::find(5);
     dd($post);
 });
 
