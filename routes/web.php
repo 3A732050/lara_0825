@@ -70,8 +70,12 @@ Route::get('/', function () {
     dd($savedPosts);
     */
 
+    /*
     $fourthPost = Post::find(4);
     dd($fourthPost);
+    */
+    $lastPost = Post::orderBy('id', 'DESC')->first();
+    dd($lastPost);
 });
 
 Route::get('index', [PostsController::class, 'index'])->name('posts.index');
