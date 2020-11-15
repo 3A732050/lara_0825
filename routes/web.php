@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -73,9 +74,15 @@ Route::get('/', function () {
     /*
     $fourthPost = Post::find(4);
     dd($fourthPost);
-    */
+
     $lastPost = Post::orderBy('id', 'DESC')->first();
     dd($lastPost);
+    */
+
+    $comment = new Comment();
+    $comment->content = 'ddd';
+    $comment->post_id = '1';
+    $comment->save();
 });
 
 Route::get('index', [PostsController::class, 'index'])->name('posts.index');
