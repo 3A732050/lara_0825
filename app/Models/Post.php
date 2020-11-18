@@ -16,4 +16,8 @@ class Post extends Model
         'is_feature'
     ];
     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
