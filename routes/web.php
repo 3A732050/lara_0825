@@ -79,10 +79,17 @@ Route::get('/', function () {
     dd($lastPost);
     */
 
+    /*
     $comment = new Comment();
     $comment->content = 'lll';
     $comment->post_id = '8';
     $comment->save();
+    */
+
+    $post=Post::find(8);
+    foreach($post->comments as $comment){
+        echo $comment->content.'<br>';
+    }
 });
 
 Route::get('index', [PostsController::class, 'index'])->name('posts.index');
